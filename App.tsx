@@ -28,7 +28,7 @@ export default function App() {
       <TextInput style={styles.input}
        placeholder='Digite sua Idade'
        onChangeText={(valor) => setIdade(Number(valor))}
-      />
+      /> 
       </View>
       <View style={{ marginTop: 20 }}>
        <Text>Sua idade é: {idade}</Text>
