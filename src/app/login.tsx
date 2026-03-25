@@ -1,27 +1,35 @@
-import { View, Button, StyleSheet } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, TextInput, View, TouchableOpacity , Text} from 'react-native';
+import { useState } from 'react';
 
-import { useRouter } from 'expo-router';
 
 export default function Login() {
-
-      const router = useRouter();
-
-      function navegar() {
-        router.push('/home');
-      }
+  
 
   return (
     <View style={styles.container}>
-        <Button title='Clique Aqui' onPress={navegar} />
-
+      <TextInput placeholder="Usuário" style={styles.inputUsuario} />
+      <TextInput placeholder="Senha" style={styles.inputUsuario} secureTextEntry={true} />   
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column', // Alinha as caixas em linha
+  },
+  inputUsuario:{
+    width: '80%',
+    height: 40,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    marginBottom: 10,
+    borderRadius: 5,
+    paddingHorizontal: 10,
+
   }
 });
